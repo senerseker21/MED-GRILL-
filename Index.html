@@ -3,277 +3,384 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Med-Grill | Döner, Pizza, Pasta & Indische Spezialitäten</title>
-  <meta name="description" content="Med-Grill in Eigenrieden – Frischer Döner, knusprige Pizza, hausgemachte Pasta und indische Currys. Jetzt online speisen oder liefern lassen!">
+  <title>Med-Grill – Vollständige Speisekarte</title>
+  <meta name="description" content="Med-Grill Eigenrieden – Komplette Speisekarte mit Döner, Pizza, Pasta, Schnitzel und indischen Gerichten.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --red: #e8281a;
-      --orange: #ff6b2b;
-      --yellow: #ffc107;
-      --bg: #fffdf5;
-      --card: #ffffff;
-      --text: #1a1a1a;
-      --muted: #777;
-      --border: #f0e8d0;
-    }
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     body {
-      background: var(--bg);
-      color: var(--text);
+      background: #fffdf5;
       font-family: 'Nunito', sans-serif;
-      min-height: 100vh;
       scroll-behavior: smooth;
     }
     .hero {
-      background: linear-gradient(135deg, #e8281a 0%, #ff6b2b 50%, #ffc107 100%);
-      padding: 2rem 1.5rem 3rem;
+      background: linear-gradient(135deg, #e8281a, #ff6b2b, #ffc107);
+      padding: 2rem 1.5rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255,255,255,.2);
-      color: #fff;
-      border: 2px solid rgba(255,255,255,.4);
-      border-radius: 30px;
-      padding: .4rem 1.2rem;
-      font-size: .85rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(2px);
     }
     .hero h1 {
       font-family: 'Bangers', cursive;
-      font-size: clamp(3.5rem, 12vw, 7rem);
-      color: #fff;
-      letter-spacing: .05em;
-      line-height: 1;
-      text-shadow: 4px 4px 0 rgba(0,0,0,.2);
-      margin-bottom: .5rem;
+      font-size: 4rem;
+      color: white;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
     }
-    .hero .tagline {
-      color: rgba(255,255,255,.95);
-      font-size: 1.2rem;
+    .tagline {
+      color: white;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      margin: 0.5rem 0;
     }
-    .hero-info {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .hero-pill, .hero-pill a {
-      background: rgba(0,0,0,.3);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,.5);
+    .hero-pill {
+      background: rgba(0,0,0,0.3);
       border-radius: 40px;
-      padding: .5rem 1.2rem;
-      font-size: .85rem;
-      font-weight: 800;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      margin: 0.2rem;
       color: white;
       text-decoration: none;
-      display: inline-block;
-      transition: transform 0.1s;
-    }
-    .hero-pill a:hover { transform: scale(1.02); background: rgba(0,0,0,0.5); }
-    .photo-strip {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: .9rem;
-      padding: 1.8rem 1rem .5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .photo-card {
-      border-radius: 24px;
-      overflow: hidden;
-      aspect-ratio: 1;
-      position: relative;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-      transition: all 0.25s ease;
-      cursor: pointer;
-      background: #fff0e0;
-    }
-    .photo-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 30px rgba(0,0,0,0.2); }
-    .photo-card svg { width: 100%; height: 100%; display: block; }
-    .photo-card .label {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.75));
-      color: #fff;
       font-weight: 800;
-      font-size: .9rem;
-      padding: 1rem .5rem .6rem;
-      text-align: center;
+      font-size: 0.85rem;
     }
     .category-nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: #fff;
-      border-bottom: 3px solid var(--yellow);
-      padding: .75rem 1rem;
+      background: white;
+      border-bottom: 3px solid #ffc107;
+      padding: 0.75rem;
       display: flex;
-      gap: .6rem;
+      gap: 0.5rem;
       overflow-x: auto;
-      scrollbar-width: thin;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      z-index: 100;
     }
     .nav-btn {
       white-space: nowrap;
-      padding: .5rem 1.2rem;
+      padding: 0.5rem 1rem;
       border-radius: 40px;
-      border: 2px solid var(--border);
-      background: #fff;
-      color: var(--text);
+      border: 2px solid #f0e8d0;
+      background: white;
       font-weight: 800;
-      font-size: .85rem;
       cursor: pointer;
-      transition: all 0.2s;
+      font-family: 'Nunito', sans-serif;
     }
-    .nav-btn:hover, .nav-btn.active { background: var(--red); border-color: var(--red); color: #fff; transform: scale(0.97); }
-    main { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem 4rem; }
-    .menu-section { margin-bottom: 3rem; animation: fadeUp 0.5s ease both; }
-    .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .section-icon { font-size: 2rem; width: 60px; height: 60px; background: linear-gradient(135deg, var(--red), var(--orange)); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 12px rgba(232,40,26,.25); }
-    .section-title { font-family: 'Bangers', cursive; font-size: 2rem; letter-spacing: .05em; color: var(--red); }
-    .items-grid { display: grid; gap: 0.8rem; }
-    .menu-item { background: var(--card); border: 2px solid var(--border); border-radius: 20px; padding: 0.9rem 1.2rem; display: flex; align-items: center; gap: 1rem; transition: all 0.2s; }
-    .menu-item:hover { border-color: var(--orange); box-shadow: 0 6px 14px rgba(255,107,43,0.12); transform: translateY(-2px); }
-    .item-num { font-family: 'Bangers', cursive; font-size: 1.2rem; color: var(--orange); min-width: 40px; }
-    .item-body { flex: 1; }
-    .item-name { font-weight: 800; font-size: 1rem; margin-bottom: 0.2rem; }
-    .item-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
-    .item-price { font-weight: 900; font-size: 1.2rem; color: var(--red); white-space: nowrap; }
-    .price-two { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; min-width: 110px; }
-    .plabel { display: inline-block; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; background: #aaa; color: #fff; border-radius: 6px; padding: 0.1rem 0.4rem; margin-right: 0.25rem; }
-    .drinks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.9rem; }
-    .drink-card { background: linear-gradient(135deg,#e3f2fd,#bbdefb); border: 2px solid #90caf9; border-radius: 20px; padding: 1rem; text-align: center; transition: transform 0.2s; }
-    .review-form-box { background: #fff; border: 2px solid var(--border); border-radius: 24px; padding: 1.5rem; margin-bottom: 1.5rem; }
-    .star-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; font-size: 2rem; cursor: pointer; }
-    .form-input { width: 100%; border: 2px solid var(--border); border-radius: 14px; padding: 0.8rem 1rem; margin-bottom: 0.8rem; transition: border 0.2s; }
-    .form-input:focus { border-color: var(--orange); outline: none; }
-    .btn-submit { background: linear-gradient(135deg, var(--red), var(--orange)); color: white; border: none; border-radius: 40px; padding: 0.8rem 2rem; font-weight: 800; cursor: pointer; }
-    .review-card { background: #fff; border: 2px solid var(--border); border-radius: 20px; padding: 1rem 1.2rem; position: relative; margin-bottom: 0.8rem; }
-    .rc-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.4rem; }
-    .rc-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--red), var(--orange)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; }
-    .btn-delete, .btn-approve { background: none; border: none; font-size: 1rem; cursor: pointer; margin-left: 0.5rem; }
-    .badge-pending { background: #ffc107; color: #333; font-size: 0.7rem; border-radius: 20px; padding: 0.2rem 0.6rem; }
-    .admin-bar { display: flex; gap: 0.8rem; margin-bottom: 1rem; flex-wrap: wrap; }
-    .avg-box { display: flex; align-items: center; gap: 1rem; background: linear-gradient(135deg,#fff8e1,#fff3cd); border-radius: 28px; padding: 1rem 1.8rem; margin-bottom: 1.5rem; }
-    footer { background: linear-gradient(135deg,#1a1a1a,#2d2d2d); color: #fff; text-align: center; padding: 2rem; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
-    @media (max-width: 640px) { .photo-strip { grid-template-columns: repeat(2,1fr); } .price-two { min-width: 80px; } }
+    .nav-btn.active, .nav-btn:hover {
+      background: #e8281a;
+      border-color: #e8281a;
+      color: white;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .menu-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 70px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .section-icon {
+      font-size: 2rem;
+      width: 55px;
+      height: 55px;
+      background: linear-gradient(135deg, #e8281a, #ff6b2b);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .section-title {
+      font-family: 'Bangers', cursive;
+      font-size: 2rem;
+      color: #e8281a;
+    }
+    .section-subtitle {
+      font-size: 0.75rem;
+      color: #777;
+      font-weight: 700;
+    }
+    .items-grid {
+      display: grid;
+      gap: 0.6rem;
+    }
+    .menu-item {
+      background: white;
+      border: 2px solid #f0e8d0;
+      border-radius: 16px;
+      padding: 0.7rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .item-num {
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      color: #ff6b2b;
+      min-width: 50px;
+    }
+    .item-body {
+      flex: 1;
+    }
+    .item-name {
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+    .item-desc {
+      font-size: 0.7rem;
+      color: #777;
+    }
+    .item-price {
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: #e8281a;
+      white-space: nowrap;
+    }
+    .price-two {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.2rem;
+      min-width: 100px;
+    }
+    .plabel {
+      font-size: 0.55rem;
+      font-weight: 800;
+      background: #aaa;
+      color: white;
+      border-radius: 6px;
+      padding: 0.1rem 0.3rem;
+      margin-right: 0.2rem;
+    }
+    .drinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.8rem;
+    }
+    .drink-card {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      border: 2px solid #90caf9;
+      border-radius: 16px;
+      padding: 0.8rem;
+      text-align: center;
+    }
+    .drink-price {
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: #1565c0;
+    }
+    .callout {
+      background: #fff8e1;
+      border: 2px dashed #ffc107;
+      border-radius: 16px;
+      padding: 0.8rem;
+      font-weight: 700;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+    }
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    footer a {
+      color: #ffc107;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-family: 'Bangers', cursive;
+    }
+    @media (max-width: 640px) {
+      .price-two { min-width: 75px; }
+      .item-num { min-width: 40px; font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
 <div class="hero">
-  <div class="hero-badge">🔥 PREMIUM QUALITÄT</div>
   <h1>Med-Grill</h1>
-  <p class="tagline">Döner · Pizza · Pasta · Schnitzel · Indische Currys</p>
-  <div class="hero-info">
+  <p class="tagline">Döner · Pizza · Pasta · Schnitzel · Indische Gerichte</p>
+  <div>
     <a href="tel:+493602697588" class="hero-pill">📞 036 026 / 97 5 88</a>
     <span class="hero-pill">🕐 Mo–Fr 11:00–21:30 | Sa–So 14:00–21:30</span>
-    <a href="tel:+493602697588" class="hero-pill" style="background:#e8281a;">🚚 Jetzt anrufen für Lieferung</a>
+    <a href="tel:+493602697588" class="hero-pill">🚚 Lieferung ab 50€</a>
   </div>
 </div>
 
-<div class="photo-strip">
-  <div class="photo-card"><svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#e05a2a"/><circle cx="100" cy="140" r="45" fill="#f4c542"/><ellipse cx="100" cy="158" rx="55" ry="10" fill="#2b2b2b"/><path d="M75 120 L85 105 L115 105 L125 120 Z" fill="#7a2e19"/><circle cx="90" cy="115" r="4" fill="#fff"/></svg><div class="label">Döner Spezial</div></div>
-  <div class="photo-card"><svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#d45a1a"/><circle cx="100" cy="105" r="55" fill="#f3cd81"/><circle cx="100" cy="105" r="45" fill="#c0392b"/><circle cx="85" cy="90" r="8" fill="#fff"/><circle cx="115" cy="98" r="6" fill="#fff"/><ellipse cx="100" cy="125" rx="15" ry="8" fill="#27ae60"/></svg><div class="label">Pizza</div></div>
-  <div class="photo-card"><svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#e89b3e"/><path d="M50 130 Q100 170 150 130" stroke="#f5e6d3" stroke-width="12" fill="none"/><circle cx="100" cy="100" r="30" fill="#c0392b"/><ellipse cx="100" cy="100" rx="12" ry="6" fill="#fff"/></svg><div class="label">Pasta</div></div>
-  <div class="photo-card"><svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#b95f1a"/><path d="M60 110 Q100 160 140 110" fill="#d49c3f" stroke="#aa6f2a" stroke-width="3"/><circle cx="100" cy="95" r="28" fill="#c9722e"/><text x="85" y="105" fill="#fff" font-size="28" font-weight="bold">🍛</text></svg><div class="label">Indisch</div></div>
-</div>
-
 <nav class="category-nav">
-  <button class="nav-btn active" data-section="doener">🥙 Döner</button><button class="nav-btn" data-section="salate">🥗 Salate</button><button class="nav-btn" data-section="gemuese">🥦 Gemüse</button><button class="nav-btn" data-section="pizza">🍕 Pizza</button><button class="nav-btn" data-section="pasta">🍝 Pasta</button><button class="nav-btn" data-section="schnitzel">🥩 Schnitzel</button><button class="nav-btn" data-section="indisch">🍛 Indisch</button><button class="nav-btn" data-section="getraenke">🥤 Getränke</button><button class="nav-btn" data-section="bewertungen">⭐ Bewertungen</button>
+  <button class="nav-btn active" data-section="doener">🥙 Döner</button>
+  <button class="nav-btn" data-section="salate">🥗 Salate</button>
+  <button class="nav-btn" data-section="gemuese">🥦 Gemüse</button>
+  <button class="nav-btn" data-section="pizza">🍕 Pizza</button>
+  <button class="nav-btn" data-section="pasta">🍝 Pasta</button>
+  <button class="nav-btn" data-section="schnitzel">🥩 Schnitzel</button>
+  <button class="nav-btn" data-section="indisch">🍛 Indisch</button>
+  <button class="nav-btn" data-section="getraenke">🥤 Getränke</button>
 </nav>
 
 <main>
-  <section id="doener" class="menu-section"><div class="section-header"><div class="section-icon">🥙</div><div><div class="section-title">Döner</div></div></div><div class="items-grid" id="doenerGrid"></div></section>
-  <section id="salate" class="menu-section"><div class="section-header"><div class="section-icon">🥗</div><div><div class="section-title">Salate</div></div></div><div class="items-grid" id="salateGrid"></div></section>
-  <section id="gemuese" class="menu-section"><div class="section-header"><div class="section-icon">🥦</div><div><div class="section-title">Gemüse Überbacken</div></div></div><div class="items-grid" id="gemueseGrid"></div></section>
-  <section id="pizza" class="menu-section"><div class="section-header"><div class="section-icon">🍕</div><div><div class="section-title">Pizza</div></div></div><div class="items-grid" id="pizzaGrid"></div></section>
-  <section id="pasta" class="menu-section"><div class="section-header"><div class="section-icon">🍝</div><div><div class="section-title">Pasta</div></div></div><div class="items-grid" id="pastaGrid"></div></section>
-  <section id="schnitzel" class="menu-section"><div class="section-header"><div class="section-icon">🥩</div><div><div class="section-title">Schnitzel</div></div></div><div class="items-grid" id="schnitzelGrid"></div></section>
-  <section id="indisch" class="menu-section"><div class="section-header"><div class="section-icon">🍛</div><div><div class="section-title">Indische Gerichte</div></div></div><div class="items-grid" id="indischGrid"></div></section>
-  <section id="getraenke" class="menu-section"><div class="section-header"><div class="section-icon">🥤</div><div><div class="section-title">Getränke</div></div></div><div class="drinks-grid" id="getraenkeGrid"></div><div class="callout" style="margin-top:1rem;">💡 Extrabeilagen: +1,00 € | Käse, Thunfisch, Dönerfleisch, Krabben: +1,50 €</div></section>
-  
-  <section id="bewertungen" class="menu-section">
-    <div class="section-header"><div class="section-icon">⭐</div><div><div class="section-title">Bewertungen</div><div class="section-subtitle">Freigeschaltete Gästemeinungen</div></div></div>
-    <div class="avg-box" id="avgBox" style="display:none"><div class="avg-num" id="avgNum">0.0</div><div><div class="avg-stars" id="avgStars"></div><div class="avg-count" id="avgCount"></div></div></div>
-    <div class="admin-bar"><input type="password" id="adminPw" placeholder="Admin Passwort" class="form-input" style="width:auto; display:inline-block;"><button class="btn-submit" style="padding:0.5rem 1rem;" onclick="adminLogin()">Admin Login</button><span id="adminMsg"></span></div>
-    <div id="adminPanel" style="display:none; margin-bottom:1rem;"><span class="badge-pending">Admin Modus aktiv – Bewertungen freigeben/löschen</span> <button onclick="adminLogout()" class="btn-submit" style="background:#777;">Ausloggen</button></div>
-    <div class="review-form-box"><h3>✍️ Jetzt bewerten</h3><div class="star-row" id="starRow"><span data-v="1">☆</span><span data-v="2">☆</span><span data-v="3">☆</span><span data-v="4">☆</span><span data-v="5">☆</span></div><div id="spamMsg" style="display:none; color:#b85c00;">⏳ Bitte warte 2 Minuten</div><input id="reviewName" class="form-input" placeholder="Dein Name"><textarea id="reviewText" class="form-input" rows="2" placeholder="Deine Meinung..."></textarea><button class="btn-submit" onclick="submitReview()">⭐ Absenden</button></div>
-    <div id="reviewsContainer"></div>
-    <div id="noReviewsMsg" style="text-align:center; padding:1rem;">✨ Noch keine Bewertungen. Sei der Erste!</div>
-  </section>
+  <section id="doener" class="menu-section"><div class="section-header"><div class="section-icon">🥙</div><div><div class="section-title">Döner</div><div class="section-subtitle">mit Zaziki-, Spezial-, Kräuter- oder scharfer Soße</div></div></div><div class="items-grid" id="doenerGrid"></div></section>
+  <section id="salate" class="menu-section"><div class="section-header"><div class="section-icon">🥗</div><div><div class="section-title">Salate</div><div class="section-subtitle">Klein ca. 300g · Groß ca. 500g</div></div></div><div class="items-grid" id="salateGrid"></div></section>
+  <section id="gemuese" class="menu-section"><div class="section-header"><div class="section-icon">🥦</div><div><div class="section-title">Gemüse überbacken</div><div class="section-subtitle">ohne Gyros / mit Gyros</div></div></div><div class="items-grid" id="gemueseGrid"></div></section>
+  <section id="pizza" class="menu-section"><div class="section-header"><div class="section-icon">🍕</div><div><div class="section-title">Pizza</div><div class="section-subtitle">24 cm / 28 cm · Jumbo 40 cm = doppelter Preis · Familienpizza 60×40 cm = 35,00 €</div></div></div><div class="items-grid" id="pizzaGrid"></div></section>
+  <section id="pasta" class="menu-section"><div class="section-header"><div class="section-icon">🍝</div><div><div class="section-title">Pasta / Nudeln</div><div class="section-subtitle">Spaghetti · Rigatoni · Tortellini · Gnocchi</div></div></div><div class="items-grid" id="pastaGrid"></div></section>
+  <section id="schnitzel" class="menu-section"><div class="section-header"><div class="section-icon">🥩</div><div><div class="section-title">Schnitzel</div><div class="section-subtitle">alle mit Pommes und Salat</div></div></div><div class="items-grid" id="schnitzelGrid"></div></section>
+  <section id="indisch" class="menu-section"><div class="section-header"><div class="section-icon">🍛</div><div><div class="section-title">Indische Gerichte</div><div class="section-subtitle">mit Pommes und Salat</div></div></div><div class="items-grid" id="indischGrid"></div></section>
+  <section id="getraenke" class="menu-section"><div class="section-header"><div class="section-icon">🥤</div><div><div class="section-title">Getränke</div></div></div><div class="drinks-grid" id="getraenkeGrid"></div><div class="callout">💡 Extrabeilagen: +1,00 € | Käse, Thunfisch, Dönerfleisch, Krabben: +1,50 €</div></section>
 </main>
-<footer><h2>Med-Grill</h2><a href="tel:+493602697588" style="color:#ffc107; font-size:1.8rem; text-decoration:none;">📞 036 026 / 97 5 88</a><div style="margin-top:1rem;">© Med-Grill · Alle Preise inkl. MwSt.</div></footer>
+<footer>
+  <h2>Med-Grill</h2>
+  <a href="tel:+493602697588">📞 036 026 / 97 5 88</a>
+  <p style="margin-top: 0.5rem;">© Med-Grill · Alle Preise inkl. MwSt.</p>
+</footer>
 
 <script>
-  // vollständiges Menü (kompakt, alle Daten vorhanden)
-  const menuDB = {
-    doener: [{num:"1",name:"Döner vegetarisch",desc:"Salat, Gurken, Tomaten, Zwiebeln, Kraut, Käse",price:"6,00 €"},{num:"2",name:"Döner im Fladenbrot",desc:"Salat, Zwiebeln, Tomaten, Gurken, Kraut, Soße",price:"6,50 €"},{num:"3",name:"Döner mit Käse",desc:"mit Salat, Käse, Soße",price:"7,50 €"},{num:"4",name:"Big Döner",desc:"EXTRA Fleisch",price:"8,00 €"},{num:"5",name:"Döner Teller",desc:"mit Salat & Soße",price:"9,50 €"}],
-    salate: [{num:"15",name:"Gemischter Salat",desc:"Kopfsalat, Zwiebeln, Tomaten, Gurken",prices:{k:"5,50 €",g:"6,00 €"}},{num:"16",name:"Thunfischsalat",desc:"gemischt mit Thunfisch",prices:{k:"6,50 €",g:"8,00 €"}},{num:"21",name:"MED-Salat",desc:"mit Dönerfleisch, Käse",prices:{k:"7,50 €",g:"9,00 €"}}],
-    gemuese: [{num:"24",name:"Broccoli al Forno",desc:"Sauce Hollandaise, Käse",prices:{no:"8,00 €",with:"10,00 €"}},{num:"25",name:"Spinat al Forno",desc:"Tomaten-Sahnesoße, Knoblauch",prices:{no:"8,00 €",with:"10,00 €"}}],
-    pizza: [{num:"28",name:"Margherita",desc:"Tomatensoße, Käse",prices:{s:"6,00 €",m:"7,00 €"}},{num:"29",name:"Salami",desc:"Salami, Käse",prices:{s:"6,50 €",m:"7,50 €"}},{num:"51",name:"Döner Pizza",desc:"Dönerfleisch, Zwiebeln",prices:{s:"7,50 €",m:"9,00 €"}}],
-    pasta: [{num:"68",name:"Spaghetti Bolognese",desc:"Fleischsoße",price:"7,50 €"},{num:"71",name:"Spaghetti Dönerfleisch",desc:"Dönerfleisch, Sahnesoße",price:"8,50 €"}],
-    schnitzel: [{num:"101",name:"Schnitzel Wiener Art",desc:"Pommes & Salat",price:"10,00 €"},{num:"102",name:"Jägerschnitzel",desc:"Pilzsauce",price:"10,50 €"}],
-    indisch: [{num:"114",name:"Chicken Curry",desc:"Hähnchen Curry, Pommes, Salat",price:"13,00 €"},{num:"118",name:"Gemüsepfanne vegetarisch",desc:"Zucchini, Pilze, Käse überbacken",price:"11,00 €"}],
-    getraenke: [{icon:"🥤",size:"0,33 l",price:"2,50 €"},{icon:"🧃",size:"0,5 l",price:"3,00 €"},{icon:"🍶",size:"1,25 l",price:"3,75 €"}]
-  };
-  function renderMenus() {
-    for(let cat in menuDB) if(cat!=='getraenke') {
-      let container = document.getElementById(cat+"Grid");
-      if(container) container.innerHTML = menuDB[cat].map(item => {
-        if(item.price) return `<div class="menu-item"><span class="item-num">${item.num}</span><div class="item-body"><div class="item-name">${item.name}</div><div class="item-desc">${item.desc}</div></div><span class="item-price">${item.price}</span></div>`;
-        else if(item.prices) return `<div class="menu-item"><span class="item-num">${item.num}</span><div class="item-body"><div class="item-name">${item.name}</div><div class="item-desc">${item.desc}</div></div><div class="price-two"><span class="p1"><span class="plabel">klein</span>${item.prices.k||item.prices.s}</span><span class="p2"><span class="plabel">groß</span>${item.prices.g||item.prices.m}</span></div></div>`;
-      }).join('');
-    }
-    document.getElementById("getraenkeGrid").innerHTML = menuDB.getraenke.map(d => `<div class="drink-card"><div class="drink-icon">${d.icon}</div><div class="drink-name">${d.size}</div><div class="drink-price">${d.price}</div></div>`).join('');
-  }
-  renderMenus();
+// ========== KOMPLETTE SPEISEKARTE ==========
+const menuDB = {
+  doener: [
+    {num:"1", name:"Döner vegetarisch", desc:"mit Salat, Gurken, Tomaten, Zwiebeln, Kraut, Käse", price:"6,00 €"},
+    {num:"2", name:"Döner im Fladenbrot mit Salat", desc:"Zwiebeln, Tomaten, Gurken, Kraut und Soße", price:"6,50 €"},
+    {num:"3", name:"Döner im Fladenbrot mit Käse", desc:"mit Salat, Zwiebeln, Tomaten, Gurken, Kraut, Käse und Soße", price:"7,50 €"},
+    {num:"4", name:"Big Döner", desc:"mit EXTRA Fleisch", price:"8,00 €"},
+    {num:"4a", name:"Dönerbox mit Salat", desc:"mit Soße und Salat", price:"7,00 €"},
+    {num:"4b", name:"Dönerbox mit Pommes", desc:"mit Soße und Pommes", price:"8,00 €"},
+    {num:"5", name:"Döner Teller", desc:"mit Salat und Soße", price:"9,50 €"},
+    {num:"6", name:"Döner Teller", desc:"mit Salat, Pommes und Soße", price:"10,50 €"},
+    {num:"7", name:"Döner Teller mit Käse", desc:"Salat, Pommes und Soße", price:"11,00 €"},
+    {num:"8", name:"Döner überbacken", desc:"Gyros mit Käse überbacken, Fladenbrot", price:"10,50 €"},
+    {num:"8a", name:"Hawaiidönerteller", desc:"Schinken, Ananas, Sahnesoße, überbacken", price:"11,50 €"},
+    {num:"9", name:"Dönerteller mit Nudeln", desc:"Dönerfleisch, Nudeln und Salat", price:"11,00 €"},
+    {num:"9b", name:"Chicken Nuggets 9 Stück", desc:"mit Pommes und Salat", price:"9,50 €"},
+    {num:"10", name:"Dönerrolle", desc:"mit Dönerfleisch, Salat, Zwiebeln, Tomaten, Gurken, Kraut, Soße", price:"7,50 €"},
+    {num:"11", name:"Dönerrolle mit Käse", desc:"mit Dönerfleisch, Käse, Salat, Zwiebeln, Tomaten, Gurken, Kraut, Soße", price:"8,50 €"},
+    {num:"12", name:"Lahmacun (gerollte Pizza)", desc:"mit Salat, Zwiebeln, Tomaten, Gurken, Kraut, Soße", price:"6,50 €"},
+    {num:"13", name:"Lahmacun mit Käse", desc:"mit Salat und Käse", price:"7,00 €"},
+    {num:"14", name:"Lahmacun mit Döner", desc:"mit Salat und Dönerfleisch", price:"8,50 €"}
+  ],
+  salate: [
+    {num:"15", name:"Gemischter Salat", desc:"Kopfsalat, Zwiebeln, Tomaten, Gurken", prices:{k:"5,50 €",g:"6,00 €"}},
+    {num:"16", name:"Thunfischsalat", desc:"gemischter Salat mit Thunfisch", prices:{k:"6,50 €",g:"8,00 €"}},
+    {num:"17", name:"Hirtensalat", desc:"gemischter Salat, Käse", prices:{k:"6,00 €",g:"7,50 €"}},
+    {num:"18", name:"Romana-Salat", desc:"gemischter Salat, Käse, Knoblauch, Thunfisch, Meeresfrüchte", prices:{k:"7,50 €",g:"8,50 €"}},
+    {num:"19", name:"Hawaii-Salat", desc:"gemischter Salat, Schinken, Käse, Ananas", prices:{k:"6,00 €",g:"8,00 €"}},
+    {num:"20", name:"Italia-Salat", desc:"gemischter Salat, Käse, Schinken, Thunfisch, Ei", prices:{k:"7,00 €",g:"8,50 €"}},
+    {num:"21", name:"MED-Salat", desc:"Kopfsalat, Tomaten, Gurken, Zwiebeln, Käse, Dönerfleisch, Soße", prices:{k:"7,50 €",g:"9,00 €"}},
+    {num:"22", name:"Salat mit Mais", desc:"Kopfsalat, Tomaten, Gurken, Schinken, Käse, Mais", prices:{k:"6,50 €",g:"8,00 €"}},
+    {num:"23", name:"Salat Boston", desc:"gemischter Salat mit gebratenen Pilze, Brokkoli, Paprika, Mais, Käse und Soße", price:"9,50 €"},
+    {num:"23a", name:"Salat Eigenrieden", desc:"gemischter Salat, Käse, Peperoni, Mozzarella", prices:{k:"6,50 €",g:"8,00 €"}}
+  ],
+  gemuese: [
+    {num:"24", name:"Broccoli al Forno", desc:"Broccoli mit Sauce Hollandaise und Käse überbacken", prices:{no:"8,00 €",with:"10,00 €"}},
+    {num:"25", name:"Spinat al Forno", desc:"Blattspinat, Tomaten-Sahnesoße, Knoblauch, Käse überbacken", prices:{no:"8,00 €",with:"10,00 €"}},
+    {num:"26", name:"Funghi alla Gorgonzola", desc:"frische Champignons mit Gorgonzola überbacken", prices:{no:"8,00 €",with:"10,00 €"}},
+    {num:"27", name:"Broccoli Küllstedt", desc:"Broccoli mit Pilzen, Artischocken, Tomatensoße, Sahne mit Käse überbacken", prices:{no:"8,00 €",with:"10,00 €"}}
+  ],
+  pizza: [
+    {num:"28", name:"Pizza Margherita", desc:"Tomatensoße, Käse", prices:{s:"6,00 €",m:"7,00 €"}},
+    {num:"29", name:"Pizza Salami", desc:"Tomatensoße, Käse, Salami", prices:{s:"6,50 €",m:"7,50 €"}},
+    {num:"30", name:"Pizza Funghi", desc:"Tomatensoße, Käse, Pilze", prices:{s:"6,50 €",m:"7,50 €"}},
+    {num:"31", name:"Pizza Schinken", desc:"Tomatensoße, Käse, Schinken", prices:{s:"6,50 €",m:"7,50 €"}},
+    {num:"32", name:"Pizza Salami-Zwiebeln", desc:"Tomatensoße, Käse, Salami, Zwiebeln", prices:{s:"7,00 €",m:"8,00 €"}},
+    {num:"33", name:"Pizza Schinken-Pilze", desc:"Tomatensoße, Käse, Schinken, Pilze", prices:{s:"7,00 €",m:"8,00 €"}},
+    {num:"34", name:"Pizza Salami-Pilze", desc:"Tomatensoße, Käse, Salami, Pilze", prices:{s:"7,00 €",m:"8,00 €"}},
+    {num:"35", name:"Pizza Büttstedt", desc:"Salami, Schinken, Pilze, Tomatensoße, Käse", prices:{s:"7,50 €",m:"8,50 €"}},
+    {num:"35a", name:"Pizza Eigenrieden", desc:"Tomatensoße, Käse, Schinken, Broccoli, Mais", prices:{s:"7,50 €",m:"8,50 €"}},
+    {num:"35b", name:"Pizza Faulungen", desc:"Tomatensoße, Käse, Thunfisch, Meeresfrüchte, Knoblauch", prices:{s:"8,00 €",m:"9,50 €"}},
+    {num:"35c", name:"Pizza al Salmone", desc:"Tomatensoße, Käse, Lachs, Spinat, Knoblauch", prices:{s:"8,00 €",m:"9,50 €"}},
+    {num:"36", name:"Pizza Bolognese", desc:"Fleischsoße", prices:{s:"6,50 €",m:"7,50 €"}},
+    {num:"37", name:"Pizza Hawaii", desc:"Schinken, Ananas, Tomatensoße, Käse", prices:{s:"7,00 €",m:"8,00 €"}},
+    {num:"38", name:"Pizza Toscana", desc:"Tomatensoße, Käse, Salami, Schinken, Pilze, Zwiebeln, Peperoniwurst", prices:{s:"8,00 €",m:"9,50 €"}},
+    {num:"39", name:"Pizza Struth", desc:"Tomatensoße, Käse, Salami, Schinken, Pilze, Dönerfleisch, Zwiebeln, Peperoni", prices:{s:"9,00 €",m:"10,50 €"}},
+    {num:"40", name:"Pizza-Spaghetti", desc:"Tomatensoße, Käse, Dönerfleisch, Spaghetti", prices:{s:"8,50 €",m:"10,00 €"}},
+    {num:"41", name:"Pizza Mafia", desc:"Tomatensoße, Käse, Schinken, Zwiebeln, Knoblauch, scharfe Peperoni", prices:{s:"7,50 €",m:"8,50 €"}},
+    {num:"42", name:"Calzone", desc:"Tomatensoße, Käse, Schinken, Salami, Paprika", prices:{s:"7,50 €",m:"8,50 €"}},
+    {num:"43", name:"Calzone II", desc:"Tomatensoße, Käse, Dönerfleisch", prices:{s:"7,50 €",m:"9,00 €"}},
+    {num:"49", name:"Pizza Krabben", desc:"Tomatensoße, Käse, Zwiebeln, Krabben, Spezialsoße", prices:{s:"7,50 €",m:"9,00 €"}},
+    {num:"51", name:"Pizza Döner", desc:"Tomatensoße, Käse, Zwiebeln, Dönerfleisch", prices:{s:"7,50 €",m:"9,00 €"}},
+    {num:"52", name:"Pizza vegetarisch", desc:"Tomatensoße, Käse, Pilze, Artischocken, Broccoli, Zwiebeln", prices:{s:"7,50 €",m:"8,50 €"}},
+    {num:"54", name:"Pizza Diavolo", desc:"Tomatensoße, Käse, Zwiebeln, Paprika, Peperoni", prices:{s:"7,00 €",m:"8,00 €"}},
+    {num:"56", name:"Kurdische Pizza", desc:"Tomatensoße, Hackfleisch, Zwiebeln, Dönerfleisch, Salat, Tomaten, Gurken, Spezialsoße", price:"10,00 €"},
+    {num:"60", name:"Pizza Spinaci", desc:"Tomatensoße, Käse, Spinat, Gorgonzola", prices:{s:"7,50 €",m:"8,50 €"}},
+    {num:"62", name:"Quattro Formaggio", desc:"4 verschiedene Käsesorten", prices:{s:"9,00 €",m:"10,00 €"}},
+    {num:"64", name:"Quattro Stagioni", desc:"Tomatensoße, Käse, Schinken, Salami, Pilze, Artischocken", prices:{s:"7,50 €",m:"9,00 €"}},
+    {num:"65", name:"Pizza Pikante", desc:"Tomatensoße, Käse, Salami, Pilze, Schinken, Artischocken, Paprika, Peperoni, Mais", prices:{s:"9,00 €",m:"10,00 €"}},
+    {num:"66", name:"Pizza Caprese", desc:"Tomatensoße, Käse, Schinken, frische Tomaten, Mozzarella, frische Champignons", prices:{s:"8,00 €",m:"9,50 €"}}
+  ],
+  pasta: [
+    {num:"67", name:"Spaghetti Napoli", desc:"mit Tomatensoße", price:"7,00 €"},
+    {num:"68", name:"Spaghetti Bolognese", desc:"mit Fleischsoße", price:"7,50 €"},
+    {num:"69", name:"Spaghetti Matriciani", desc:"mit Zwiebeln, Schinken, Tomatensoße, Sahne (scharf)", price:"8,00 €"},
+    {num:"70", name:"Spaghetti Carbonara", desc:"Sahne, Parmesankäse, Schinken, Ei", price:"8,00 €"},
+    {num:"71", name:"Spaghetti mit Dönerfleisch", desc:"Dönerfleisch, Parmesankäse und Sahnesoße", price:"8,50 €"},
+    {num:"72", name:"Spaghetti al Diavolo", desc:"Schinken, Pilze, Tomatensauce, Sahnesauce, sehr scharf", price:"8,00 €"},
+    {num:"73", name:"Spaghetti Marinara", desc:"Meeresfrüchte, Tomatensauce, Knoblauch", price:"8,50 €"},
+    {num:"75", name:"Spaghetti Spinaci", desc:"Spinat, Gorgonzola, Sahnesoße", price:"8,50 €"},
+    {num:"76", name:"Rigatoni Napoli", desc:"mit Tomatensoße", price:"7,00 €"},
+    {num:"77", name:"Rigatoni Bolognese", desc:"mit Fleischsoße", price:"7,50 €"},
+    {num:"83", name:"Nudeln al Salmone", desc:"Spinat, Lachs, Knoblauch-Sahnesauce", price:"10,00 €"},
+    {num:"84", name:"Tortellini al Salmone", desc:"mit Lachs-Sahnesauce", price:"9,50 €"},
+    {num:"85", name:"Tortellini Napoli", desc:"mit Tomatensoße", price:"7,50 €"},
+    {num:"86", name:"Tortellini Bolognese", desc:"mit Fleischsoße", price:"8,00 €"},
+    {num:"89", name:"Gnocchi alla Gorgonzola", desc:"Kartoffelklößchen in Gorgonzolasauce und Schinken", price:"8,00 €"},
+    {num:"90", name:"Spaghetti mit Dönerfleisch", desc:"Tomaten-Sahnesoße, Käse überbacken", price:"9,50 €"},
+    {num:"90a", name:"Nudeln mit Würzfleisch", desc:"Sahnesoße, Käse überbacken", price:"9,50 €"},
+    {num:"91", name:"Spaghetti Broccoli", desc:"Broccoli, Tomaten-Sahnesoße, Käse überbacken", price:"9,00 €"},
+    {num:"92", name:"Rigatoni mit Dönerfleisch", desc:"Tomaten-Sahnesoße, Käse überbacken", price:"9,50 €"},
+    {num:"93", name:"Rigatoni Broccoli", desc:"Broccoli, Tomaten-Sahnesoße, Käse überbacken", price:"8,50 €"},
+    {num:"94", name:"Rigatoni al Forno", desc:"Schinken, Erbsen, Hackfleischsauce, Käse überbacken", price:"8,50 €"},
+    {num:"95", name:"Rigatoni Vegetaria", desc:"Verschiedene Gemüse, Tomatensoße, Käse überbacken", price:"8,50 €"},
+    {num:"96", name:"Rigatoni Monalisa", desc:"Schinken, Spinat, Mozzarella, Sahnesoße, Käse überbacken", price:"8,50 €"},
+    {num:"97", name:"Gnocchi alla Chef", desc:"Kartoffelklößchen, Spinat, Zucchini, Tomaten-Sahnesoße, Käse überbacken", price:"8,50 €"},
+    {num:"97a", name:"Gnocchi Karavar", desc:"Dönerfleisch, Zucchini, Knoblauch, Tomaten-Sahnesoße, Käse überbacken", price:"9,00 €"},
+    {num:"98", name:"Tortellini al Forno", desc:"Schinken, Erbsen, Hackfleischsauce, Käse überbacken", price:"9,00 €"},
+    {num:"99", name:"Combinazione", desc:"drei verschiedene Nudelsorten, Hackfleischsauce, Käse überbacken", price:"9,00 €"},
+    {num:"100", name:"Tortellini mit Dönerfleisch", desc:"Tomatensoße, Sahne, Käse", price:"10,00 €"}
+  ],
+  schnitzel: [
+    {num:"101", name:"Schnitzel 'Wiener Art'", desc:"Pommes und Salat", price:"10,00 €"},
+    {num:"102", name:"Jägerschnitzel", desc:"Pilzsauce, Pommes und Salat", price:"10,50 €"},
+    {num:"103", name:"Rahmschnitzel", desc:"Rahmsauce, Pommes und Salat", price:"10,50 €"},
+    {num:"104", name:"Zigeunerschnitzel", desc:"pikante Zigeunersauce, Pommes und Salat", price:"10,50 €"},
+    {num:"105", name:"Schnitzel alla Chef", desc:"Schinken, Käse, Sahnesoße, Pommes, Salat", price:"11,50 €"},
+    {num:"106", name:"Schnitzel Cabrese", desc:"frische Tomaten, Mozzarella, Käse überbacken, Pommes, Salat", price:"11,50 €"},
+    {num:"107", name:"Hawaii-Schnitzel", desc:"Schinken, Ananas, Sahnesauce, Käse überbacken, Pommes, Salat", price:"11,50 €"},
+    {num:"108", name:"Schnitzel Bolognese", desc:"Schinken, Käse, Hackfleischsauce, Pommes, Salat", price:"11,50 €"},
+    {num:"109", name:"Schnitzel Würzfleisch", desc:"mit Käse überbacken, Pommes, Salat", price:"11,50 €"},
+    {num:"110", name:"Schnitzel Gorgonzola", desc:"mit Gorgonzola und Sahnesoße, Pommes, Salat", price:"11,00 €"},
+    {num:"113", name:"Schnitzel Dönerfleisch", desc:"Champignons, Paprika, Zwiebeln, Käse überbacken, Pizzabrot und Salat", price:"13,00 €"}
+  ],
+  indisch: [
+    {num:"114", name:"Chicken Curry", desc:"Hähnchen mit Curry, Pommes und Salat", price:"13,00 €"},
+    {num:"115", name:"Murg Palak", desc:"Hähnchenfleisch mit Spinat, Pommes und Salat", price:"13,00 €"},
+    {num:"116", name:"Chicken Bhuna", desc:"Hähnchenfleisch mit Zwiebeln, Knoblauch, Ingwer, grünem Paprika, gebraten, Pommes und Salat", price:"14,00 €"},
+    {num:"117", name:"Chicken Vindallo", desc:"Hähnchenfleisch mit sehr scharfer Vindallosoße, Pommes und Salat", price:"13,00 €"},
+    {num:"118", name:"Gemüsepfanne vegetarisch", desc:"Zucchini, Pilze, Tomaten, Peperoni, Paprika, Erbsen, Knoblauch, Käse überbacken und Pizzabrot", price:"11,00 €"}
+  ],
+  getraenke: [
+    {icon:"🥤", size:"0,33 l", price:"2,50 €"},
+    {icon:"🧃", size:"0,5 l", price:"3,00 €"},
+    {icon:"🍶", size:"1,25 l", price:"3,75 €"},
+    {icon:"☕", size:"Tasse Tee", price:"1,00 €"}
+  ]
+};
 
-  // Bewertungssystem mit Admin-Freigabe
-  let pendingReviews = [], approvedReviews = [], selectedStars = 0, isAdmin = false, lastSubmit = 0;
-  const ADMIN_PW = "MedGrill2024!";
-  function loadReviews() { try{ const p=localStorage.getItem('mg_pending'); if(p) pendingReviews=JSON.parse(p); const a=localStorage.getItem('mg_approved'); if(a) approvedReviews=JSON.parse(a); }catch(e){} }
-  function saveReviews() { localStorage.setItem('mg_pending',JSON.stringify(pendingReviews)); localStorage.setItem('mg_approved',JSON.stringify(approvedReviews)); }
-  function renderStarsInput() { document.querySelectorAll('#starRow span').forEach((s,i)=>{ s.textContent = i<selectedStars?'★':'☆'; }); }
-  document.querySelectorAll('#starRow span').forEach(s=>{ s.addEventListener('click',()=>{ selectedStars=parseInt(s.dataset.v); renderStarsInput(); }); s.addEventListener('mouseover',e=>{ let v=parseInt(e.target.dataset.v); document.querySelectorAll('#starRow span').forEach((x,i)=>{ x.textContent=i<v?'★':'☆'; }); }); s.addEventListener('mouseout',()=>renderStarsInput()); });
-  function renderApproved() {
-    const container = document.getElementById('reviewsContainer'); const noneDiv = document.getElementById('noReviewsMsg');
-    if(!approvedReviews.length) { container.innerHTML=''; noneDiv.style.display='block'; document.getElementById('avgBox').style.display='none'; return; }
-    noneDiv.style.display='none'; const avg=(approvedReviews.reduce((s,r)=>s+r.stars,0)/approvedReviews.length).toFixed(1);
-    document.getElementById('avgNum').innerText=avg; document.getElementById('avgStars').innerHTML='★'.repeat(Math.round(avg))+'☆'.repeat(5-Math.round(avg));
-    document.getElementById('avgCount').innerHTML=`${approvedReviews.length} Bewertung${approvedReviews.length>1?'en':''}`; document.getElementById('avgBox').style.display='flex';
-    container.innerHTML = approvedReviews.map(r=>`<div class="review-card"><div class="rc-header"><div class="rc-avatar">${r.name.charAt(0)}</div><div><div class="rc-name">${escapeHtml(r.name)}</div><div class="rc-date">${r.date}</div></div></div><div class="rc-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div><div class="rc-text">${escapeHtml(r.text)}</div>${isAdmin?`<div style="text-align:right;"><button class="btn-delete" onclick="deleteApproved(${r.id})">🗑️ Löschen</button></div>`:''}</div>`).join('');
-    if(isAdmin && pendingReviews.length) { let html = `<div style="margin-top:1rem;"><h4>⏳ Ausstehend (freigeben/löschen)</h4>`; pendingReviews.forEach(p=>{ html+=`<div class="review-card"><div class="rc-header"><div class="rc-avatar">${p.name.charAt(0)}</div><div><div class="rc-name">${escapeHtml(p.name)}</div><div class="rc-date">${p.date}</div><span class="badge-pending">wartet</span></div></div><div class="rc-stars">${'★'.repeat(p.stars)}${'☆'.repeat(5-p.stars)}</div><div class="rc-text">${escapeHtml(p.text)}</div><div><button class="btn-approve" onclick="approveReview(${p.id})">✅ Freigeben</button><button class="btn-delete" onclick="deletePending(${p.id})">🗑️ Löschen</button></div></div>`; }); html+=`</div>`; container.insertAdjacentHTML('beforeend',html); }
-  }
-  function escapeHtml(s){ return s.replace(/[&<>]/g,function(m){if(m==='&')return'&amp;';if(m==='<')return'&lt;';if(m==='>')return'&gt;';return m;}); }
-  function submitReview() { const name=document.getElementById('reviewName').value.trim(), text=document.getElementById('reviewText').value.trim(); if(!selectedStars) {alert("Sterne auswählen");return;} if(!name||!text) {alert("Name und Text eingeben");return;} if(Date.now()-lastSubmit<120000){document.getElementById('spamMsg').style.display='block';return;} document.getElementById('spamMsg').style.display='none'; if((name+text).toLowerCase().includes('http')){alert("Keine Links erlaubt");return;} pendingReviews.unshift({id:Date.now(),name:name.slice(0,40),text:text.slice(0,400),stars:selectedStars,date:new Date().toLocaleDateString('de-DE')}); saveReviews(); lastSubmit=Date.now(); document.getElementById('reviewName').value=''; document.getElementById('reviewText').value=''; selectedStars=0; renderStarsInput(); renderApproved(); alert("Danke! Deine Bewertung wird nach Freigabe sichtbar."); }
-  function approveReview(id){ if(!isAdmin) return; const idx=pendingReviews.findIndex(p=>p.id===id); if(idx!==-1){ approvedReviews.unshift(pendingReviews[idx]); pendingReviews.splice(idx,1); saveReviews(); renderApproved(); } }
-  function deletePending(id){ if(isAdmin){ pendingReviews=pendingReviews.filter(p=>p.id!==id); saveReviews(); renderApproved(); } }
-  function deleteApproved(id){ if(isAdmin){ approvedReviews=approvedReviews.filter(p=>p.id!==id); saveReviews(); renderApproved(); } }
-  function adminLogin(){ const pw=document.getElementById('adminPw').value; if(pw===ADMIN_PW){ isAdmin=true; document.getElementById('adminPanel').style.display='block'; renderApproved(); } else { document.getElementById('adminMsg').innerHTML='❌ Falsches Passwort'; setTimeout(()=>document.getElementById('adminMsg').innerHTML='',2000); } document.getElementById('adminPw').value=''; }
-  function adminLogout(){ isAdmin=false; document.getElementById('adminPanel').style.display='none'; renderApproved(); }
-  window.submitReview=submitReview; window.approveReview=approveReview; window.deletePending=deletePending; window.deleteApproved=deleteApproved; window.adminLogin=adminLogin; window.adminLogout=adminLogout;
-  loadReviews(); renderApproved(); renderStarsInput();
-  // Navigation
-  const btns=document.querySelectorAll('.nav-btn'); const sections=['doener','salate','gemuese','pizza','pasta','schnitzel','indisch','getraenke','bewertungen'];
-  btns.forEach((btn,i)=>btn.addEventListener('click',()=>{ document.getElementById(sections[i]).scrollIntoView({behavior:'smooth'}); btns.forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }));
-</script>
-</body>
-</html>
+// Menüyü ekrana bas
+function renderMenus() {
+  for(let cat in menuDB) {
+    if(cat === 'getraenke') {
+      let container = document.getElementById("getraenkeGrid");
+      if(container) container.innerHTML = menuDB.getraenke.map(d => `<div class="drink-card"><div class="drink-icon">${d.icon}</div><div class="drink-name">${d.size}</div><div class="drink-price">${d.price}</div></div>`).join('');
+      continue;
+    }
+    let container = document.getElementById(cat+"Grid");
+    if(!container) continue;
+    container.innerHTML = menuDB[cat].map(item => {
+      if(item.price) return `<div class="menu-item"><span class="item-num">${item.num}</span><div class="item-body"><div class="item-name">${item.name}</div><div class="item-desc">${item.desc}</div></div><span class="item-price">${item.price}</span></div>`;
+      else if(item.prices && item.prices.k) return `<div class="menu-item"><span class="item-num">${item.num}</span><div class="item-body"><div class="item-name">${item.name}</div><div class="item-desc">${item.desc}</div></div><div class="price-two"><span class="p1"><span class="plabel">klein</span>${item.prices.k}</span><span class="p2"><span class="plabel">groß</span>${item.prices.g}</span></div></div>`;
+      else if(item.prices && item.prices.s) return `<div class="menu-item"><span class="item-num">${item.num}</span><div class="item-body"><div class="item-name">${item.name}</div><div class="item-desc">${item.desc}</div></div
